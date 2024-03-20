@@ -837,7 +837,7 @@ func (s *SubService) genRemark(inbound *model.Inbound, email string, extra strin
 			now := time.Now().Unix()
 			switch exp := stats.ExpiryTime / 1000; {
 			case exp > 0:
-				remark = append(remark, fmt.Sprintf("%d%spoo", (exp-now)/86400, "Days"))
+				remark = append(remark, fmt.Sprintf("%d%s⏳", (exp-now)/86400, "Days"))
 			case exp < 0:
 				remark = append(remark, fmt.Sprintf("%d%s⏳", exp/-86400, "Days"))
 			}
